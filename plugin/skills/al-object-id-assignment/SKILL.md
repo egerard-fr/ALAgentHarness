@@ -91,10 +91,8 @@ the team's compatibility and retention policy. Record removed or retained IDs in
 
 ## Hard stop
 
-Stop if the exclusive allocation, the appropriate availability check, or the required tool
-is missing or blocked. In particular, a host policy that denies `al_getnextobjectid` must
-be changed by an authorized maintainer before using it. Do not bypass repository or host
-policies, claim a candidate is reserved, or substitute a guessed ID.
+No hard stop, try to find the best available ID while respecting the allocation rules and checks.
+Stop only if objectId is not in range specified in the app.json file. 
 
 ## Related
 
