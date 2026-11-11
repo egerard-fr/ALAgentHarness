@@ -12,7 +12,7 @@ word: **done** or **not done**.
 | D4 | Nothing changed outside `app/`, `test/` and the feature's spec (plus its row in the `specs/README.md` index). | `git diff --name-only <base>` + untracked files |
 | D5 | The spec exists, is `implemented` and has no open questions. | the spec's frontmatter and `## Open questions` |
 | D6 | New business logic has tests, one per acceptance criterion. | a changed `Subtype = Test` codeunit in `test/` that contains every test named in the spec's `## Tests` |
-| D7 | Every applicable company rule in `rules/` passes. | the `company-rules` skill: PASS / FAIL / N/A per rule file, with `file:line` |
+| D7 | Every applicable plugin and project company rule passes. | the `company-rules` skill: PASS / FAIL / N/A per selected rule, with `file:line` |
 | D8 | The tests ran on the sandbox and passed, after the last code change. | a test run (`runTests`, `al_run_tests` or `al runtests`) of the spec's test codeunit in this session, after publishing: every test from the spec's `## Tests` ran, all passed |
 
 ## What this proves

@@ -1,12 +1,13 @@
 ---
 name: company-rules
-description: 'Load and apply the company AL rules in rules/ as mandatory constraints, and report PASS / FAIL per rule. Use BEFORE writing or designing any AL code, when reviewing AL, and for /done line D7. Enumerates the folder every time: a new rule file applies without editing this skill.'
+description: 'Load and apply shared plugin and project-local AL rules as mandatory constraints, and report PASS / FAIL per rule. Use BEFORE writing or designing AL, when reviewing AL, and for /done line D7. Enumerate both rule folders every time.'
 ---
 
 # Company Rules
 
-The rules in `rules/` are this company's opinions about AL, one article per rule, each with a
-`.good.al` and a `.bad.al` sample. They are **mandatory**.
+The plugin's shared rules and the project's optional `rules/` are mandatory AL constraints.
+Each rule has one article, a `.good.al` sample and a `.bad.al` sample. Project rules override
+shared rules with the same filename; other shared and project rules all apply.
 
 They come **on top of BCQuality**, not instead of it. BCQuality is the general layer
 (Microsoft + community best practice) and still applies in full; the company rules add what
@@ -22,10 +23,20 @@ at hand.
 
 ## Procedure
 
-### 1. Enumerate the folder
+### 1. Locate and enumerate both folders
 
-List `rules/*.md` except `README.md`. **Never work from a remembered or fixed list**: the
-folder is the list. An empty folder is fine: report "no company rules" and stop.
+Locate the installed copy of this `SKILL.md`. Its plugin root is two directories above its
+parent (`company-rules/../..`); read shared rules from `<plugin root>/rules/`, not from a
+path relative to the project. When available, `CLAUDE_PLUGIN_ROOT` may identify the plugin
+root, but verify that it is the root containing this skill. Do not assume the source checkout
+or the current working directory is the installed plugin.
+
+List all `*.md` except `README.md` in the shared folder and in the project root's `rules/`,
+if present. Match rules by filename: a project article replaces the shared article of the
+same name, including both examples; project-only articles are added. Enumerate both folders
+every time, and report each selected rule's source. A missing project folder is fine. If
+the installed plugin root or shared folder cannot be found, stop and report the blocker;
+do not silently report that no rules exist.
 
 ### 2. Select what applies
 
@@ -36,7 +47,8 @@ miss.
 
 ### 3. Read the selected rules in full
 
-The whole article plus its `.good.al` and `.bad.al`. The samples are the authoritative form.
+The whole article plus its `.good.al` and `.bad.al` from the same folder. If either sample
+is missing, stop and report the incomplete rule; do not combine sources. The samples are the authoritative form.
 Normative are `## Best Practice` and `## Anti Pattern`; the `## Description` says how to check.
 
 ### 4. Apply
@@ -44,31 +56,28 @@ Normative are `## Best Practice` and `## Anti Pattern`; the `## Description` say
 - **Writing code:** follow the `.good.al` pattern as you write; never emit the `.bad.al`
   pattern.
 - **Designing:** list each applicable rule in the spec under `## Decisions` as a constraint
-  ("D5 - rule tableextension-pte-suffix: field is \"Preferred Carrier PTE\"").
+  ("D5 - rule translation-in-comment: include French translations in comments").
 - **Checking:** run the check from the rule's Description on every changed `.al` file.
 
 ### 5. Report (checking)
 
 ```
-Company rules (rules/, 5 found, 4 applicable)
-  PASS  tableextension-pte-suffix          app/src/DIRCustomer.TableExt.al:5 "Preferred Carrier PTE"
-  FAIL  label-naming                       app/src/DIRCustomerCheckCarrierMeth.Codeunit.al:22
-        CarrierLabel passed to Error() -> rename to NoPreferredCarrierErr
-  PASS  single-object-per-file             6 files, 1 object each
-  PASS  page-no-local-procedures           app/src/DIRCustomerCard.PageExt.al: no local procedure
-  N/A   meth-codeunit-single-public-procedure   no Meth codeunit in the change
+Company rules (plugin + project, 2 selected, 1 applicable)
+  PASS  translation-in-comment        <plugin root>/rules/translation-in-comment.md  app/src/Example.al:5
+  N/A   use-table-field-captions       <plugin root>/rules/use-table-field-captions.md  no table or field caption in messages
 ```
 
-Every line has evidence (`file:line`) or, for N/A, the reason. A FAIL on a company rule blocks
-done.
+Every line has its selected rule source and evidence (`file:line`) or, for N/A, the reason.
+A FAIL on a company rule blocks done.
 
 ## Never
 
-- Never add a rule to this skill. A rule is a file in `rules/`.
+- Never add a rule to this skill. Shared rules belong in the plugin's `rules/`; local rules
+  belong in the project root's `rules/`.
 - Never soften a rule because general guidance says otherwise: the company rule wins.
 
 ## Related
 
-- `rules/README.md` - how to write a rule.
+- `<plugin root>/rules/README.md` - shared rules and local overrides.
 - `definition-of-done` - D7 runs step 5 of this skill.
 - `al-knowledge` - general guidance, which these rules override.

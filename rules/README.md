@@ -1,10 +1,9 @@
 # rules/
 
-**Example rules from one partner. Replace them with yours.**
-
-These five rules are one company's opinions, shipped here only to show the mechanism. Yours
-will be different, and that is the point: a markdown file in this folder changes what the
-agent writes and what `/done` checks. No prompt surgery, no skill edits.
+The plugin supplies shared translation rules to every project. The rules in this folder are
+local to this project: they add to the shared rules or override a shared rule with the same
+article filename and both local examples. To change shared rules for all projects, edit the
+plugin's `rules/` instead; local copies are not synchronized automatically.
 
 | Rule | In one line |
 |------|-------------|
@@ -13,10 +12,12 @@ agent writes and what `/done` checks. No prompt surgery, no skill edits.
 | `page-no-local-procedures` | pages and page extensions have no local procedures |
 | `label-naming` | Labels are named `<Context><Reason>Err`, `...Msg`, `...Qst` |
 | `single-object-per-file` | one AL object per `.al` file |
+| `translation-in-comment` | provide French translations in comments for XLIFF Sync |
+| `use-table-field-captions` | reuse table and field captions in user-facing messages |
 
 ## How the harness uses this folder
 
-- The `company-rules` skill lists this folder every time; it never works from a fixed list.
+- The `company-rules` skill lists both plugin and project rule folders every time.
 - Agents that write AL (`al-coder`, `al-sdd`) apply every applicable rule while writing.
 - `/done` line D7 and the `al-reviewer` agent report PASS / FAIL per rule.
 - A rule here wins over general guidance (BCQuality, Microsoft Learn) when they disagree.

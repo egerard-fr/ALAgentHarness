@@ -69,9 +69,9 @@ with the reason.
 
 ### 7. D7 - company rules
 
-Follow the `company-rules` skill in checking mode on the changed AL. Every rule file in
-`rules/` gets its own line: PASS, FAIL or N/A. Any FAIL makes D7 red. A rule added a minute
-ago shows up here without any other change.
+Follow the `company-rules` skill in checking mode on the changed AL. Each selected plugin
+or project rule gets its own line: PASS, FAIL or N/A. Any FAIL makes D7 red. A rule added a
+minute ago shows up here without any other change.
 
 ### 8. D8 - tests ran and passed
 

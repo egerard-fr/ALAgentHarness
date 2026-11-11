@@ -7,6 +7,7 @@ console.log(`AL agent harness (plugin) - always-on rules:
 - Extend, never modify the base app: tableextension, pageextension, event subscribers.
 - Business logic lives in codeunits, not in page triggers.
 - Text shown by Error, Message and Confirm is a Label variable, never a literal (a hook blocks literals).
+- Before writing, designing or reviewing AL, load the company-rules skill and apply its shared plugin and project rules.
 - Object, field and enum-value IDs come from the al-object-id-assignment skill (Ninja). Never invent one.
 - Identify AL objects as Type ID "Name": Table 18 "Customer", Codeunit 414 "Release Sales Document".
 - Never report done without a green build; "done" is the definition-of-done skill (/done).

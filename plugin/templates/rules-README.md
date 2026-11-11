@@ -1,22 +1,12 @@
 # rules/
 
-**Example rules from one partner. Replace them with yours.**
-
-These five rules are one company's opinions, shipped here only to show the mechanism. Yours
-will be different, and that is the point: a markdown file in this folder changes what the
-agent writes and what `/done` checks. No prompt surgery, no skill edits.
-
-| Rule | In one line |
-|------|-------------|
-| `meth-codeunit-single-public-procedure` | table business logic lives in a Meth codeunit with exactly one public procedure |
-| `tableextension-pte-suffix` | new fields and procedures in a tableextension end in ` PTE` |
-| `page-no-local-procedures` | pages and page extensions have no local procedures |
-| `label-naming` | Labels are named `<Context><Reason>Err`, `...Msg`, `...Qst` |
-| `single-object-per-file` | one AL object per `.al` file |
+The plugin provides shared rules automatically. This optional project folder adds local
+rules or overrides a shared rule with the same article filename and both local examples.
+To change a shared rule for every project, update the plugin's `rules/` instead.
 
 ## How the harness uses this folder
 
-- The `company-rules` skill lists this folder every time; it never works from a fixed list.
+- The `company-rules` skill lists the plugin and project folders every time; it never works from a fixed list.
 - Agents that write AL (`al-coder`, `al-sdd`) apply every applicable rule while writing.
 - `/done` line D7 and the `al-reviewer` agent report PASS / FAIL per rule.
 - A rule here wins over general guidance (BCQuality, Microsoft Learn) when they disagree.

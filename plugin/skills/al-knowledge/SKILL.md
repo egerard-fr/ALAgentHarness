@@ -53,7 +53,8 @@ session is listed as an additional working directory).
 2. Read every matching article **in full**, plus its sibling `.good.al` / `.bad.al`.
 3. Apply only the `## Best Practice` and `## Anti Pattern` sections as guidance.
 
-Company rules are not here: they live in `rules/` and win over BCQuality when the two disagree.
+Company rules are not here: the `company-rules` skill loads them from the plugin and project;
+they win over BCQuality when the two disagree.
 
 ### 3. Answer with the source
 

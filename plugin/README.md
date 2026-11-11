@@ -25,14 +25,17 @@ colleague is offered both plugins when they open the repo.
 | `agents/` | al-build-fixer, al-lookup, al-spec, al-coder, al-reviewer, al-sdd |
 | `commands/` | /spec, /sdd, /done, /pr |
 | `hooks/` | SessionStart: the always-on rules. PreToolUse: blocks a literal in Error/Message/Confirm, also via the shell |
+| `rules/` | shared company rules and their good/bad examples, applied in every project |
 | `.mcp.json` | AL Object ID Ninja, the AL MCP server (`al launchmcpserver`, path-less: the skills load the project with `al_addproject`) |
 | `templates/` | spec template, DEFINITION-OF-DONE.md, rules README - used when the project has none |
 
 ## What stays in your project
 
-A plugin cannot carry what is *yours*: `AGENTS.md` (affix, folders, BC version), `rules/` (your
-company rules), `specs/` (your specs) and, if you want your own, `DEFINITION-OF-DONE.md`. The
-skills read them from the project when they exist.
+Keep `AGENTS.md` (affix, folders, BC version), `specs/` and, if desired,
+`DEFINITION-OF-DONE.md` in each project. Project `rules/` is optional: it adds rules or
+overrides a shared rule with an article and both examples of the same name. The
+`company-rules` skill reads both locations. Edit `plugin/rules/` in this repository to
+change the shared rules for all projects; project-local copies are not synchronized.
 
 ## Versioning
 
