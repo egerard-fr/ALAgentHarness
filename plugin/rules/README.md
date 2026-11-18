@@ -7,6 +7,7 @@ the same filename and both local examples. The `company-rules` skill applies the
 | Rule | In one line |
 |------|-------------|
 | `translation-in-comment` | provide French translations in comments for XLIFF Sync |
+| `tooltip-on-table` | provide rule to set Tooltip on table's field instead page's field|
 | `use-table-field-captions` | reuse table and field captions in user-facing messages |
 
 ## How the harness uses this folder
