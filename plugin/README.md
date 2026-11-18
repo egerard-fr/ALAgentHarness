@@ -26,7 +26,7 @@ colleague is offered both plugins when they open the repo.
 | `commands/` | /spec, /sdd, /done, /pr |
 | `hooks/` | SessionStart: the always-on rules. PreToolUse: blocks a literal in Error/Message/Confirm, also via the shell |
 | `rules/` | shared company rules and their good/bad examples, applied in every project |
-| `.mcp.json` | AL Object ID Ninja, the AL MCP server (`al launchmcpserver`, path-less: the skills load the project with `al_addproject`) |
+| `.mcp.json` | the AL MCP server, AL Object ID Ninja has been removed (`al launchmcpserver`, path-less: the skills load the project with `al_addproject`) |
 | `templates/` | spec template, DEFINITION-OF-DONE.md, rules README - used when the project has none |
 
 ## What stays in your project

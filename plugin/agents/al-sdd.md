@@ -30,7 +30,7 @@ proves less.
   say in one line what you are about to change and why.
 - **Never change an assertion to make a test pass.** Fix the code.
 - **Sandbox only.** Never OnPrem, never Production.
-- **IDs from Ninja** (`al-object-id-assignment`) for every object, stub and test codeunit,
+- **IDs from AL extension tool** (`al-object-id-assignment`) for every object, stub and test codeunit,
   with the owning app's `app.json` as `targetFilePath` (never the file you are about to write).
   A stub keeps its ID when it gains logic.
 - **BCQuality and company rules** (`al-knowledge`, `company-rules`) for business logic and

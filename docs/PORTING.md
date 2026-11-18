@@ -9,7 +9,7 @@ This is what moves where.
 | `.claude/skills/*/SKILL.md` | same folder, or `.github/skills/` | Shared where the host supports skills; keep the `description` frontmatter, it is the trigger. |
 | `.claude/agents/<name>.md` | `.github/agents/<name>.agent.md` | Same body. Map `model` and the tool list to Copilot's frontmatter. |
 | `.claude/commands/<name>.md` | `.github/prompts/<name>.prompt.md` | Same body; add `agent:` frontmatter where the command starts an agent. |
-| `.mcp.json` | `.vscode/mcp.json` | Same servers. Copilot uses `"servers"` instead of `"mcpServers"`. The Ninja VS Code extension already exposes its tools to Copilot, no MCP needed. |
+| `.mcp.json` | `.vscode/mcp.json` | Same servers. Copilot uses `"servers"` instead of `"mcpServers"`. |
 | `.claude/settings.json` permissions | none | Copilot asks per tool call; there is no repo-level deny list. |
 | `.claude/hooks/*` | none | No equivalent. The rule stays in `AGENTS.md` (instruction only) and `/done` still greps for it. |
 | `specs/`, `rules/`, `DEFINITION-OF-DONE.md` | same | Tool-neutral. |

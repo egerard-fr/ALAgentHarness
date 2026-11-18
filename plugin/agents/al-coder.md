@@ -17,7 +17,7 @@ spec already holds every decision, so you need no conversation.
 
 - **No approved spec, no code.** A feature without a spec goes to `/spec` first. A spec with
   `status: draft` is not approved.
-- **Every ID comes from Ninja** via the `al-object-id-assignment` skill. No guess, no
+- **Every ID comes from AL extension tool** via the `al-object-id-assignment` skill. No guess, no
   increment, no `idRanges`, no placeholder.
 - **Write only in `app/`, `test/`, the spec's `## Reserved IDs` / `status` and its row in the
   `specs/README.md` index.** Nothing else.

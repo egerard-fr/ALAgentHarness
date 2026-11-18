@@ -27,18 +27,18 @@ every test covers exactly one criterion. A criterion you can not test is not fin
 
 ## Objects
 
-Every new or extended object, by type and name. The ID is always `<Ninja>`: it is reserved
+Every new or extended object, by type and name. The ID is always `<AL extension tool>`: it is reserved
 at implementation time, never here.
 
 | Type | ID | Name | Purpose |
 |------|----|------|---------|
-| tableextension | `<Ninja>` | "DIR <Name>" | extends Table <ID> "<Base table>" |
+| tableextension | `<AL extension tool>` | "DIR <Name>" | extends Table <ID> "<Base table>" |
 
 New fields:
 
 | Table | ID | Field | Type | Notes |
 |-------|----|-------|------|-------|
-| Table <ID> "<Base table>" | `<Ninja>` | "DIR <Field>" | Code[20] | TableRelation, captions |
+| Table <ID> "<Base table>" | `<AL extension tool>` | "DIR <Field>" | Code[20] | TableRelation, captions |
 
 ## Events and extension points
 
@@ -66,7 +66,7 @@ here exists.
 
 ## Reserved IDs
 
-Filled by the implementing agent from its Ninja reservations. `/done` checks the code
+Filled by the implementing agent from its `AL extension tool` reservations. `/done` checks the code
 against this table.
 
 | Type | ID | Name | App |

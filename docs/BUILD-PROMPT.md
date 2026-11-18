@@ -19,8 +19,7 @@ company-specific: no iFacto, Distri, Jira, Azure DevOps, BCQuality custom layer,
 tracker, chat export, cost warnings, Dutch, PR attestation, specific people. Replace
 `App/Docs/Instructions/*.design.md` with `specs/*.md`. Replace the BCQuality custom layer
 with the `rules/` folder (Part C). Replace Jira gates with "if the task references an
-issue, read it; otherwise proceed". Keep the public dependencies: AL Object ID Ninja (MCP),
-the AL extension tools (`al_getnextobjectid`, `al_build`, `al_getdiagnostics`,
+issue, read it; otherwise proceed". Keep the public dependencies: the AL extension tools (`al_getnextobjectid`, `al_build`, `al_getdiagnostics`,
 `al_run_tests`), microsoft/BCQuality plugin, Microsoft Learn MCP. BC Code Atlas is a marked
 placeholder until its skill section and MCP config are delivered. Where a hard stop depends on a tool being present, keep the hard stop
 and give the install command.
@@ -40,10 +39,10 @@ CLAUDE.md                      contains only: @AGENTS.md (01)
 DEFINITION-OF-DONE.md          human-readable DoD (08, tests-run line in 10)
 README.md                      the promise, how to clone, how to demo (demo.sh), how to make it yours
 demo.sh                        next | prev | goto NN | reset | list  (checks out step branches, prints the step title)
-.mcp.json                      al (02b), al-object-id-ninja (03); BC knowledge via the BC Observatory plugin (05); moves into plugin/ (11)
+.mcp.json                      al (02b); BC knowledge via the BC Observatory plugin (05); moves into plugin/ (11)
 .claude/settings.json          permission deny list + hooks (01; al_getnextobjectid denied in 03; BC Observatory enabled in 05; own plugin enabled in 11)
 .claude/hooks/                 the hook script(s) (01)
-.claude/skills/al-object-id-assignment/SKILL.md       (02a regex script, 02b AL tool, 03 rewritten for Ninja)
+.claude/skills/al-object-id-assignment/SKILL.md       (02a regex script, 02b AL tool)
 .claude/skills/al-build-validation/SKILL.md           (04)
 .claude/skills/al-knowledge/SKILL.md                  (05, routes to the BC Observatory plugin, BCQuality, symbols)
 .claude/skills/definition-of-done/SKILL.md            (08)

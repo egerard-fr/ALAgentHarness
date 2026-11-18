@@ -15,7 +15,7 @@ the agent that builds it, and it travels with the PR.
 
 - File name: the feature in kebab-case, `specs/preferred-carrier.md`. Start from
   `TEMPLATE.md`.
-- Objects are named by type and name. IDs are `<Ninja>` until the implementing agent fills
+- Objects are named by type and name. IDs are `<AL extension tool>` until the implementing agent fills
   `## Reserved IDs`.
 - `depends-on:` lists the specs that must be implemented first. Specs without a dependency
   between them can be built in parallel, each on its own branch.

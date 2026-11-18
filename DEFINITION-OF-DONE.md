@@ -7,13 +7,12 @@ word: **done** or **not done**.
 | # | Done means | Proven by |
 |---|------------|-----------|
 | D1 | Both apps build with zero errors. | `al_build` + `al_getdiagnostics` on `app/` then `test/` (or `al compile`) |
-| D2 | Every new object and field ID was reserved with Ninja. | IDs declared in the changed `.al` files = the spec's `## Reserved IDs`, each inside its app's `idRanges`, none declared twice |
-| D3 | No hardcoded user-facing text. | no `Error(`, `Message(` or `Confirm(` with a literal (also via `StrSubstNo`) in the changed `.al` files |
-| D4 | Nothing changed outside `app/`, `test/` and the feature's spec (plus its row in the `specs/README.md` index). | `git diff --name-only <base>` + untracked files |
-| D5 | The spec exists, is `implemented` and has no open questions. | the spec's frontmatter and `## Open questions` |
-| D6 | New business logic has tests, one per acceptance criterion. | a changed `Subtype = Test` codeunit in `test/` that contains every test named in the spec's `## Tests` |
-| D7 | Every applicable company rule in `rules/` passes. | the `company-rules` skill: PASS / FAIL / N/A per rule file, with `file:line` |
-| D8 | The tests ran on the sandbox and passed, after the last code change. | a test run (`runTests`, `al_run_tests` or `al runtests`) of the spec's test codeunit in this session, after publishing: every test from the spec's `## Tests` ran, all passed |
+| D2 | No hardcoded user-facing text. | no `Error(`, `Message(` or `Confirm(` with a literal (also via `StrSubstNo`) in the changed `.al` files |
+| D3 | Nothing changed outside `app/`, `test/` and the feature's spec (plus its row in the `specs/README.md` index). | `git diff --name-only <base>` + untracked files |
+| D4 | The spec exists, is `implemented` and has no open questions. | the spec's frontmatter and `## Open questions` |
+| D5 | New business logic has tests, one per acceptance criterion. | a changed `Subtype = Test` codeunit in `test/` that contains every test named in the spec's `## Tests` |
+| D6 | Every applicable company rule in `rules/` passes. | the `company-rules` skill: PASS / FAIL / N/A per rule file, with `file:line` |
+| D7 | The tests ran on the sandbox and passed, after the last code change. | a test run (`runTests`, `al_run_tests` or `al runtests`) of the spec's test codeunit in this session, after publishing: every test from the spec's `## Tests` ran, all passed |
 
 ## What this proves
 

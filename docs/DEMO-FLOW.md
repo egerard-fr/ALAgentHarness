@@ -39,8 +39,7 @@ ours and write yours".
 Sample app: `app/` - a tiny PTE "Directions Demo" (affix `DIR`, idRanges 50100-50149) with one
 existing table + page so there is "existing code" to respect. `test/` - an empty test app
 (80100-80149) so the test story is possible. Both compile against current BC symbols. No customer
-code. The publisher is "iFacto Business Solutions NV" only because AL Object ID Ninja reserves
-IDs per publisher under a subscription; say so once on stage, it is not an iFacto opinion.
+code.
 
 The task (same prompt both runs, saved as `docs/TASK.md`):
 

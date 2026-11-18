@@ -56,7 +56,6 @@ Chat export - <date> - <one-line topic>
 Ask:        "<the developer's request>" (turn 1)
 Skills:     offered 9, used 3   never triggered: al-object-id-assignment (turn 4: new table)
 Agents:     al-coder (subagent, turn 6)
-MCP:        al-object-id-ninja failed to connect; microsoft-learn 2 calls
 Errors:     al_build "project not loaded" x3 (turns 7-9)
 Loops:      same build fix 3 times (turns 7-9)
 Suggested:  al-object-id-assignment description lacks "create a table"

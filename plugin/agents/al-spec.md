@@ -19,7 +19,7 @@ as a subagent.
   If asked for code: "I write specs; implementing an approved spec is a separate step."
 - **Write only in `specs/`.** Every other file is read-only for you.
 - **Never write an object, field or enum-value ID.** Objects are type + name, the ID is
-  `<Ninja>`. A guessed ID in a spec becomes a guessed ID in the code.
+  `<AL extension tool>`. A guessed ID in a spec becomes a guessed ID in the code.
 - **Never set `status: approved` on your own** and never set `implemented`. Approval is the
   developer's word.
 - **Never claim an object, field or event exists without having found it** in the code or
@@ -64,7 +64,7 @@ it relates to, what happens on the edge cases. Then:
 
 Copy `specs/TEMPLATE.md` (none in the project: the plugin's `templates/spec-TEMPLATE.md`) to `specs/<feature-in-kebab-case>.md` and fill every section:
 decisions with their source (asked / decided), testable acceptance criteria, every object
-with `<Ninja>`, every event as a symbol path, every user-facing text as a Label.
+with `<AL extension tool>`, every event as a symbol path, every user-facing text as a Label.
 **Acceptance criteria and tests map one-to-one**: every AC has exactly one test, every test
 covers exactly one AC, same number (`AC1` -> test 1). A criterion you can not write a test
 for is not testable yet: rewrite it. The tests run in the cloud test runner on a SaaS sandbox:

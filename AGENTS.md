@@ -15,7 +15,7 @@ it is a skill in `.claude/skills/`, not a paragraph here.
 ## Look it up, never assume
 
 - **Affix:** `mandatoryAffixes` in `app/AppSourceCop.json`. Every new object name carries it.
-- **Object IDs:** reserved with AL Object ID Ninja, never picked. Do not read `idRanges`.
+- **Object IDs:** from the `al-object-id-assignment` skill, never picked. Do not read `idRanges`.
 - **BC version:** `application` and `runtime` in `app/app.json`.
 
 ## How we write AL

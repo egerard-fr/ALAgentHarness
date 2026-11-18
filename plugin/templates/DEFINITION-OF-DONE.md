@@ -7,7 +7,7 @@ word: **done** or **not done**.
 | # | Done means | Proven by |
 |---|------------|-----------|
 | D1 | Both apps build with zero errors. | `al_build` + `al_getdiagnostics` on `app/` then `test/` (or `al compile`) |
-| D2 | Every new object and field ID was reserved with Ninja. | IDs declared in the changed `.al` files = the spec's `## Reserved IDs`, each inside its app's `idRanges`, none declared twice |
+| D2 | Every new object and field ID was reserved with AL extension tool. | IDs declared in the changed `.al` files = the spec's `## Reserved IDs`, each inside its app's `idRanges`, none declared twice |
 | D3 | No hardcoded user-facing text. | no `Error(`, `Message(` or `Confirm(` with a literal (also via `StrSubstNo`) in the changed `.al` files |
 | D4 | Nothing changed outside `app/`, `test/` and the feature's spec (plus its row in the `specs/README.md` index). | `git diff --name-only <base>` + untracked files |
 | D5 | The spec exists, is `implemented` and has no open questions. | the spec's frontmatter and `## Open questions` |
